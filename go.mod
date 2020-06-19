@@ -1,4 +1,4 @@
-module github.com/softask-app/awesomeProject
+module github.com/softask-app/lib-go-token
 
 go 1.14
 

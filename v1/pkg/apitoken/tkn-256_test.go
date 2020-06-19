@@ -1,7 +1,7 @@
 package apitoken_test
 
 import (
-	"github.com/softask-app/awesomeProject/v1/pkg/apitoken"
+	"github.com/softask-app/lib-go-token/v1/pkg/apitoken"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
