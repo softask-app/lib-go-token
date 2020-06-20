@@ -1,10 +1,8 @@
 package apitoken
 
 import (
-	"strconv"
-
-	"github.com/francoispqt/gojay"
 	"github.com/google/uuid"
+	"strconv"
 )
 
 func NewToken128() Token128 {
@@ -13,24 +11,7 @@ func NewToken128() Token128 {
 
 type Token128 [16]byte
 
-func (t Token128) String() string {
-	return formatHexString(t[:])
-}
-
-func (t Token128) MarshalJSONArray(enc *gojay.Encoder) {
-	enc.String(t.String())
-}
-
-func (t Token128) IsNil() bool {
-	return false
-}
-
-func (t Token128) UnmarshalJSONArray(d *gojay.Decoder) error {
-	var tmp string
-	if err := d.String(&tmp); err != nil {
-		return err
-	}
-
+func (t *Token128) FromString(tmp string) error {
 	for i := range t {
 		pos := i * 2
 		if u, e := strconv.ParseUint(tmp[pos : pos+2], 16, 8); e != nil {
@@ -41,4 +22,8 @@ func (t Token128) UnmarshalJSONArray(d *gojay.Decoder) error {
 	}
 
 	return nil
+}
+
+func (t Token128) String() string {
+	return formatHexString(t[:])
 }
