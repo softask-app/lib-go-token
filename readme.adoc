@@ -1,3 +1,14 @@
 = Golang API Tokens
 
 Types for the 128 & 256 bit Softask API tokens.
+
+== Dependencies
+
+=== Runtime
+
+* https://github.com/google/uuid[google/uuid v1.1.1]
+* https://github.com/vulpine-io/char[vulpine-io/char v1.0.1]
+
+=== Test
+
+* https://github.com/smartystreets/goconvey[smartystreets/goconvey v1.6.4]
